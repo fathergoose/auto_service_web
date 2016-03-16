@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Description</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Food</th>
+      <th>Health</th>
+      <th>Shelter</th>
+      <th>User</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Street</th>
+      <th>Shares</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.name %></td>
+        <td><%= resource.address %></td>
+        <td><%= resource.phone %></td>
+        <td><%= resource.description %></td>
+        <td><%= resource.city %></td>
+        <td><%= resource.state %></td>
+        <td><%= resource.zipcode %></td>
+        <td><%= resource.food %></td>
+        <td><%= resource.health %></td>
+        <td><%= resource.shelter %></td>
+        <td><%= resource.user_id %></td>
+        <td><%= resource.latitude %></td>
+        <td><%= resource.longitude %></td>
+        <td><%= resource.street %></td>
+        <td><%= resource.shares %></td>
+        <td><%= link_to 'Show', resource %></td>
+        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resource', new_resource_path %>
